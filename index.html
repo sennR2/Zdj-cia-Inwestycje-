@@ -98,45 +98,56 @@
     </footer>
 
     <script>
-        const screens = {
-            magazyn: {
-                img: 'img/1000091580.jpg',
-                desc: 'Sekcja Magazyn: Kontrola pobranych i zużytych materiałów oraz eksport CSV.',
-                color: 'purple'
-            },
-            foldery: {
-                img: 'img/1000091578.jpg',
-                desc: 'Konfiguracja Auto-Folderów: Twoja struktura projektowa tworzy się sama.',
-                color: 'green'
-            },
-            synchro: {
-                img: 'img/1000091575.jpg',
-                desc: 'Status Projektów: Synchronizacja online z dyskiem Google dla wielu ekip.',
-                color: 'blue'
-            }
-        };
-
-        function changeScreen(key) {
-            const display = document.getElementById('phone-display');
-            const desc = document.getElementById('screen-desc');
-            
-            // Efekt przejścia
-            display.style.opacity = '0';
-            
-            setTimeout(() => {
-                display.src = screens[key].img;
-                desc.innerText = screens[key].desc;
-                display.style.opacity = '1';
-                
-                // Resetowanie stylów przycisków
-                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500'));
-                // Dodanie aktywnego obramowania
-                document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
-            }, 300);
+    // Zaktualizowana lista Twoich plików - sprawdź czy nazwy są identyczne na GitHub!
+    const screens = {
+        magazyn: {
+            img: 'img/1000091580.jpg', 
+            desc: 'Sekcja Magazyn: Kontrola pobranych i zużytych materiałów oraz eksport CSV.',
+            color: 'purple'
+        },
+        foldery: {
+            img: 'img/1000091578.jpg',
+            desc: 'Konfiguracja Auto-Folderów: Twoja struktura projektowa tworzy się sama.',
+            color: 'green'
+        },
+        synchro: {
+            img: 'img/1000091575.jpg',
+            desc: 'Status Projektów: Synchronizacja online z dyskiem Google dla wielu ekip.',
+            color: 'blue'
         }
+    };
 
-        // Inicjalizacja pierwszego stanu
-        window.onload = () => changeScreen('magazyn');
-    </script>
+    function changeScreen(key) {
+        const display = document.getElementById('phone-display');
+        const desc = document.getElementById('screen-desc');
+        
+        // Debugowanie w konsoli (F12 w przeglądarce)
+        console.log("Próbuję załadować zdjęcie z:", screens[key].img);
+
+        display.style.opacity = '0';
+        
+        setTimeout(() => {
+            // Próba załadowania zdjęcia
+            display.src = screens[key].img;
+            desc.innerText = screens[key].desc;
+            display.style.opacity = '1';
+            
+            // Obsługa błędu ładowania zdjęcia
+            display.onerror = function() {
+                console.error("BŁĄD: Nie znaleziono pliku " + screens[key].img + ". Sprawdź czy plik jest w folderze img i czy ma małe litery w nazwie.");
+            };
+            
+            document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500'));
+            document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+        }, 300);
+    }
+
+    // Start aplikacji
+    window.onload = () => {
+        console.log("Strona załadowana. Startuję demo...");
+        changeScreen('magazyn');
+    };
+</script>
+
 </body>
 </html>
