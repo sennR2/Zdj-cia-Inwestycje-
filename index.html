@@ -28,6 +28,7 @@
             <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest font-bold">
                 <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
                 <a href="#funkcje" class="hover:text-purple-400 transition">O Systemie</a>
+                <a href="#kontakt" class="hover:text-purple-400 transition">Kontakt</a>
                 <a href="LINK_DO_PDF" class="hover:text-purple-400 transition underline decoration-purple-500">Instrukcja PDF</a>
                 <a href="LINK_DO_APP" class="bg-green-600 px-5 py-2 rounded-lg hover:bg-green-700 transition text-white shadow-lg">Pobierz Aplikację</a>
             </div>
@@ -36,6 +37,7 @@
         <div id="mobileMenu" class="mobile-menu lg:hidden bg-slate-900 border-b border-slate-800 p-6 space-y-4 text-center font-semibold text-sm">
             <a href="#demo" onclick="toggleMenu()" class="block py-2">Interaktywne Demo</a>
             <a href="#funkcje" onclick="toggleMenu()" class="block py-2">O Systemie</a>
+            <a href="#kontakt" onclick="toggleMenu()" class="block py-2">Kontakt</a>
             <a href="LINK_DO_PDF" onclick="toggleMenu()" class="block py-2 text-purple-400 font-bold">Instrukcja PDF</a>
             <a href="LINK_DO_APP" onclick="toggleMenu()" class="block py-3 bg-green-600 rounded-xl text-white uppercase">Pobierz Aplikację</a>
         </div>
@@ -55,53 +57,63 @@
             <h2 class="text-2xl font-bold mb-12 text-center text-slate-300 uppercase tracking-widest italic">Kliknij krok, by zobaczyć ekran:</h2>
             <div class="grid lg:grid-cols-2 gap-10 items-start">
                 
-                <div class="space-y-4 order-2 lg:order-1">
-                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-th-list text-purple-500 text-2xl"></i>
+                <div class="space-y-3 order-2 lg:order-1">
+                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-th-list text-purple-500 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">1. Panel Główny</h3>
-                                <p class="text-xs text-slate-400 mt-1 uppercase italic">Filtrowanie statusów i wyszukiwanie.</p>
+                                <h3 class="font-bold text-sm uppercase">1. Panel Główny</h3>
+                                <p class="text-[10px] text-slate-400 uppercase italic">Filtrowanie i wyszukiwanie.</p>
                             </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-folder-plus text-green-500 text-2xl"></i>
+                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-folder-plus text-green-500 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">2. Nowy Projekt</h3>
-                                <p class="text-xs text-slate-400 mt-1 uppercase italic">Dodawanie nowej inwestycji.</p>
+                                <h3 class="font-bold text-sm uppercase">2. Nowy Projekt</h3>
+                                <p class="text-[10px] text-slate-400 uppercase italic">Dodawanie nowej inwestycji.</p>
                             </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-folder-open text-blue-400 text-2xl"></i>
+                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-folder-open text-blue-400 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">3. Struktura Projektu</h3>
-                                <p class="text-xs text-slate-400 mt-1 uppercase italic">Automatyczne foldery i pliki projektowe.</p>
+                                <h3 class="font-bold text-sm uppercase">3. Struktura Projektu</h3>
+                                <p class="text-[10px] text-slate-400 uppercase italic">Automatyczne foldery.</p>
                             </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-camera text-yellow-500 text-2xl"></i>
+                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-camera text-yellow-500 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">4. Praca w Terenie</h3>
-                                <p class="text-xs text-slate-400 mt-1 uppercase italic">Robienie geotagowanych zdjęć.</p>
+                                <h3 class="font-bold text-sm uppercase">4. Praca w Terenie</h3>
+                                <p class="text-[10px] text-slate-400 uppercase italic">Robienie zdjęć.</p>
                             </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-900 hover:border-red-500 transition-all shadow-xl">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-cloud-arrow-up text-red-500 text-3xl"></i>
+                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-orange-500 transition-all">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-save text-orange-500 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase text-white">5. Efekt Końcowy</h3>
-                                <p class="text-xs text-red-400 mt-1 uppercase font-bold tracking-widest">Pliki opisane i gotowe w chmurze.</p>
+                                <h3 class="font-bold text-sm uppercase">5. Efekt Końcowy</h3>
+                                <p class="text-[10px] text-slate-400 uppercase italic">Pliki gotowe na telefonie.</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button onclick="changeScreen('sync')" id="btn-sync" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900 hover:border-red-500 transition-all shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-sync text-red-500 text-xl"></i>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-white">6. Synchronizacja</h3>
+                                <p class="text-[10px] text-red-400 uppercase font-bold italic">Przesyłanie na Dysk Google.</p>
                             </div>
                         </div>
                     </button>
@@ -168,17 +180,17 @@
                 <div class="text-slate-400 text-xs leading-relaxed space-y-2">
                     <p>Koniec z ręcznym tworzeniem folderów dla każdej inwestycji. Zdefiniuj schemat raz, a aplikacja powieli go dla każdego nowego projektu:</p>
                     <ul class="ml-2 space-y-2">
-                        <li><b>Automatyczna sekwencja:</b> Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy (OSD, OPP, ZS), Studnie, Słupy.</li>
+                        <li><b>Automatyczna sekwencja:</b> Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, mufy (OSD, OPP, ZS), Studnie, Słupy.</li>
                         <li><b>Tagowanie GPS i Data:</b> Każde zdjęcie ma wbudowaną lokalizację w metadanych, co gwarantuje rzetelność przed Inwestorem.</li>
                         <li><b>Dedykowany folder "Projekt":</b> Zawsze wyróżniony na szaro, by monter w terenie miał błyskawiczny dostęp do planów PDF.</li>
-                        <li><b>Zaawansowane raportowanie Muf:</b> Możliwość numeracji i tworzenia pełnej dokumentacji wewnątrz konkretnej mufy (OSD, OPP, ZS).</li>
+                        <li><b>Zaawansowane raportowanie muf:</b> Możliwość numeracji i tworzenia pełnej dokumentacji wewnątrz konkretnej mufy (OSD, OPP, ZS).</li>
                     </ul>
                 </div>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-cyan-500 text-3xl mb-4"><i class="fas fa-users-cog"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">5. PRACA GRUPOWA I SYNCHRONIZACJA</h4>
+                <h4 class="font-bold uppercase mb-3 text-sm">5. PRACA GRUPOWA I SYNCHRONIZACJA (MULTIPLE DEVICES)</h4>
                 <div class="text-slate-400 text-xs leading-relaxed space-y-2">
                     <p>System umożliwia płynną współpracę całego zespołu w czasie rzeczywistym:</p>
                     <ul class="ml-2 space-y-2">
@@ -205,22 +217,22 @@
 
         <div class="mt-12 bg-slate-800/80 p-8 rounded-3xl border border-slate-700">
             <h4 class="font-bold mb-8 text-center uppercase tracking-widest text-slate-200">PODSUMOWANIE KORZYŚCI</h4>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-[10px] text-center uppercase font-semibold">
-                <div>
-                    <i class="fas fa-clock text-green-500 text-2xl mb-2"></i>
-                    <p>Oszczędność czasu (do 40%)</p>
+            <div class="grid md:grid-cols-2 gap-8 text-xs text-left">
+                <div class="flex gap-4">
+                    <i class="fas fa-clock text-green-500 text-2xl"></i>
+                    <p><span class="text-white font-bold uppercase">Oszczędność czasu (do 40%):</span> Brak konieczności ręcznej segregacji i opisywania zdjęć po powrocie do biura.</p>
                 </div>
-                <div>
-                    <i class="fas fa-images text-green-500 text-2xl mb-2"></i>
-                    <p>Czysta Galeria</p>
+                <div class="flex gap-4">
+                    <i class="fas fa-images text-green-500 text-2xl"></i>
+                    <p><span class="text-white font-bold uppercase">Czysta Galeria:</span> Zdjęcia inwestycji nie mieszają się z prywatnymi zdjęciami w telefonie.</p>
                 </div>
-                <div>
-                    <i class="fas fa-circle-exclamation text-green-500 text-2xl mb-2"></i>
-                    <p>Brak pomyłek</p>
+                <div class="flex gap-4">
+                    <i class="fas fa-circle-exclamation text-green-500 text-2xl"></i>
+                    <p><span class="text-white font-bold uppercase">Brak pomyłek:</span> Precyzyjne przypisanie zdjęć do numerów muf i słupów wyklucza błędy w dokumentacji powykonawczej.</p>
                 </div>
-                <div>
-                    <i class="fas fa-medal text-green-500 text-2xl mb-2"></i>
-                    <p>Profesjonalny wizerunek</p>
+                <div class="flex gap-4">
+                    <i class="fas fa-medal text-green-500 text-2xl"></i>
+                    <p><span class="text-white font-bold uppercase">Profesjonalny wizerunek:</span> Inwestor otrzymuje przejrzystą, geotagowaną dokumentację, co przyspiesza płatności.</p>
                 </div>
             </div>
         </div>
@@ -245,7 +257,8 @@
             dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Dodawanie nowej inwestycji. Zdefiniuj parametry i ruszaj w teren.' },
             otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy, Studnie, Słupy.' },
             slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' },
-            gotowe: { img: './img/1000091582.jpg', color: 'red', desc: 'EFEKT KOŃCOWY: Pliki są opisane i zsynchronizowane z dyskiem Google, gotowe do odbioru przez biuro.' }
+            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'EFEKT KOŃCOWY: Pliki gotowe. Zdjęcia są już opisane i zapisane lokalnie na telefonie w pamięci urządzenia.' },
+            sync: { img: './img/1000091575.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, wejdź w menu, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' }
         };
 
         function changeScreen(key) {
@@ -256,15 +269,4 @@
                 display.src = screens[key].img;
                 desc.innerText = screens[key].desc;
                 display.style.opacity = '1';
-                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-red-500'));
-                document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
-            }, 200);
-        }
-
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
+                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', '
