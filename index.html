@@ -444,7 +444,9 @@ Kod źródłowy i projekt aplikacji „Zdjęcia Inwestycje” są chronione praw
     // 3. Obsługa menu mobilnego
     function toggleMenu() {
         const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('active');
+        // Jeśli ma klasę 'hidden', to ją usuwa (pokazuje menu)
+        // Jeśli nie ma, to dodaje 'hidden' (chowa menu)
+        menu.classList.toggle('hidden');
     }
         
 function showTab(tabId) {
