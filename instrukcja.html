@@ -516,31 +516,33 @@
         </section>
     </main>
 
-    <script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
 function changeImg(id, direction) {
     const dataContainer = document.getElementById('data-' + id);
     const imgElement = document.getElementById(id);
     
-    // Pobierz listę zdjęć i aktualny indeks
+    if (!dataContainer || !imgElement) {
+        console.error("Błąd: Nie znaleziono kontenera dla " + id);
+        return;
+    }
+
     const images = dataContainer.getAttribute('data-images').split(',');
     let currentIndex = parseInt(dataContainer.getAttribute('data-index'));
-    
-    // Oblicz nowy indeks (z pętlą: po ostatnim wraca do pierwszego)
+
     currentIndex += direction;
     if (currentIndex >= images.length) currentIndex = 0;
     if (currentIndex < 0) currentIndex = images.length - 1;
-    
-    // Zapisz nowy indeks
+
     dataContainer.setAttribute('data-index', currentIndex);
-    
-    // Zmień zdjęcie z efektem płynności
+
     imgElement.style.opacity = '0.3';
     setTimeout(() => {
         imgElement.src = images[currentIndex].trim();
         imgElement.style.opacity = '1';
     }, 150);
 }
-    </script>
+</script>
     
 </body>
 </html>
