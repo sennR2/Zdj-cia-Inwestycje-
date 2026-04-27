@@ -611,6 +611,56 @@
     </div>
 </section>
         
+<section class="mb-16">
+    <div class="bg-slate-800/80 p-8 rounded-[2rem] border border-slate-700 shadow-xl">
+        <h3 class="text-orange-400 font-bold mb-6 uppercase tracking-widest text-xl border-b border-slate-700 pb-4">
+            KROK 10: Ustawienia systemowe i GPS ⚙️
+        </h3>
+        
+        <div class="text-slate-300 leading-relaxed text-sm space-y-6 mb-8">
+            <p>Aby uniknąć problemów z brakiem współrzędnych na zdjęciach lub przerywaniem wysyłania plików, skonfiguruj telefon według poniższych wytycznych.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
+                    <p class="font-bold text-white mb-2 underline text-emerald-400">📍 Lokalizacja (GPS)</p>
+                    <p class="text-xs">W ustawieniach systemowego aparatu włącz <strong>"Tagi lokalizacji"</strong>. Sprawdź też w uprawnieniach aplikacji, czy Aparat ma dostęp do lokalizacji. Bez tego zdjęcia nie będą miały przypisanych współrzędnych.</p>
+                </div>
+                
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
+                    <p class="font-bold text-white mb-2 underline text-emerald-400">🔋 Bateria (Synchronizacja)</p>
+                    <p class="text-xs">W informacjach o aplikacji wybierz użycie baterii: <strong>"Bez ograniczeń"</strong>. Umożliwi to wysyłanie zdjęć do chmury w tle, nawet przy zablokowanym ekranie.</p>
+                </div>
+            </div>
+
+            <div class="bg-orange-900/20 p-4 rounded-xl border border-orange-700/50 mt-4">
+                <p class="text-xs text-orange-200 italic">
+                    <strong>Uwaga:</strong> Jeśli pozostawisz domyślne ograniczenia baterii, telefon może przerwać wysyłanie zdjęć po schowaniu go do kieszeni. W trybie "Bez ograniczeń" aplikacja nadal zużywa bardzo mało energii.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-4 mt-8">
+                <div class="relative group">
+                    <div class="relative mx-auto border-[6px] border-slate-700 rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 w-[260px] h-[540px]">
+                        <img id="img-krok10" src="img/66.jpg" class="w-full h-full object-cover transition-opacity duration-300" alt="Ustawienia systemowe">
+                    </div>
+
+                    <button onclick="changeImg('img-krok10', -1)" class="absolute top-1/2 -left-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-orange-600 p-3 rounded-full border border-slate-600 transition-all">
+                        <i class="fas fa-chevron-left text-white"></i>
+                    </button>
+                    <button onclick="changeImg('img-krok10', 1)" class="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-orange-600 p-3 rounded-full border border-slate-600 transition-all">
+                        <i class="fas fa-chevron-right text-white"></i>
+                    </button>
+                </div>
+                <div id="data-img-krok10" class="hidden" data-images="img/66.jpg,img/67.jpg,img/68.jpg" data-index="0"></div>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest italic text-center">Ustawienia baterii i uprawnień Android</p>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+
+
         
         
         <section class="mt-16 text-center border-t border-slate-800 pt-10 text-slate-500">
